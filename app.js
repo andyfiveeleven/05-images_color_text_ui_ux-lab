@@ -56,8 +56,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
+  var partialSum = sum(a,b);
+  var tripSum = sum(partialSum[0], c);
+  var sumMsg = a + ' and ' + b + ' and ' + c + ' sum to ' + tripSum[0] + '.';
+  var partialMult = multiply(a,b);
+  var tripMult = multiply(partialMult[0],c);
+  var multMsg = 'The product of ' +a + ' and ' + b + ' and ' + c + ' is ' + tripMult[0] + '.';
 
+  console.log([tripSum[0], tripMult[0], sumMsg, multMsg]);
+
+  return [tripSum, tripMult, sumMsg, multMsg];
 }
+
+sumAndMultiply(4,7,5);
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
